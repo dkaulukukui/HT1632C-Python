@@ -33,29 +33,40 @@ to install python-dev and git-core:
 ```
 sudo apt-get update
 sudo apt-get install python-dev
-sudo apt-get install git-core
+sudo apt-get install git
+
+sudo apt-get install -y python-setuptools
 ```
 
 You are now ready to install the wiringPi library. You may have a look
 at http://wiringpi.com/ for further information and documentation.
-Inside the shell execute these commands, to download the source code with
-git, build and install the library.
+WiringPi is PRE-INSTALLED with standard Raspbian systems.
 
+To update or install on a Raspbian-Lite system:
 ```
-git clone git://git.drogon.net/wiringPi
-cd wiringPi
-git pull origin
-./build
+sudo apt-get install wiringpi
 ```
 
 ### Enable SPI on Board
+This is done through raspi-config.  Go
 
-`gpio load spi`
+```
+sudo raspi-config
+
+```
+Select Option 5 Interfacing Options
+Select Option P4 SPI
+Select Yes to enable SPI
 
 
-### Install
+### Copy this Git to your machine and Install
 
-`sudo python setup.py install`
+```
+git clone git://github.com/dkaulukukui/HT1632C-Python.git
+cd HT1632C-Python
+sudo python setup.py install
+
+```
 
 
 ## Examples
